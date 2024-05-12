@@ -1,6 +1,4 @@
 let firstNumber = null;
-
-
 // Function for Plus Operator
 function plusOperator(event){
     event.preventDefault();
@@ -15,33 +13,39 @@ function subOperator(event){
     console.log('subtract works!');
     firstNumber = +document.getElementById("numberOne").value;
     console.log('First number check', firstNumber);
+    
 }
 
 
 // Function for equal operation
-function getCalculations(event){
-event.preventDefault();
-console.log("getCalculations() works!" );
-if (firstNumber !== null) {
-    // Retrieve the second number from the input field
-    const secondNumber = +document.getElementById("numberTwo").value;
-    console.log('Second number check', secondNumber);
-    const result = addNumbers(firstNumber, secondNumber);
-    console.log('Result:', result);
-} else {
-    console.error('Please enter the first number.');
+function getCalculations(event) {
+    event.preventDefault();
+    console.log("getCalculations() works!");
+    console.log("Event:", event);
+
+    
+    if (firstNumber !== null) {
+        // Retrieve the second number from the input field
+        const secondNumber = +document.getElementById("numberTwo").value;
+        console.log('Second number check', secondNumber);
+
+        let result;
+
+        // Check the operation based on the button clicked
+        if (event.target.id === "addButton") {
+            result = addNumbers(firstNumber, secondNumber);
+            
+        }  console.log('Result:', result);
 }
+
 }
-
-
-
 
 function addNumbers(numberOne, numberTwo){
     return numberOne + numberTwo;
 }
 
 function subNumbers(numberOne, numberTwo){
-    return numberOne + numberTwo;
+    return numberOne - numberTwo;
 }
 
 function multiplyNumbers(numberOne, numberTwo){

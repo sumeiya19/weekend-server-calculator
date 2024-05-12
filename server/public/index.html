@@ -11,12 +11,12 @@
 
     <form data-testid="calculator">
       <input data-testid="numOne" placeholder="First Number" id="numberOne">
-      <button onClick="plusOperator(event)">+</button>
-      <button onClick="subOperator(event)">-</button>
-      <button onClick="multiplyOperator(event)">*</button>
-      <button onClick="divideOperator(event)">/</button>
+      <button onClick="plusOperator(event)" id="addButton">+</button>
+      <button onClick="subOperator(event)" id="subButton">-</button>
+      <button onClick="multiplyOperator(event)" id="multiplyButton">*</button>
+      <button onClick="divideOperator(event)" id="divideButton">/</button>
       <input data-testid="numTwo" placeholder="Second Number" id="numberTwo">
-      <button id="eqaulOperation" onClick="getCalculations(event)">=</button>
+      <button onClick="getCalculations(event)" >=</button>
       <button onClick="clearInputs()">C</button>
     </form>
 

@@ -5,3 +5,5 @@
     - Create server routes
         - GET /calculations that will send the calculations array back to the client
         - POST /calculations that will "do the math" and obtain the correct result
+
+    When you press the equal 
