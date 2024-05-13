@@ -9,22 +9,22 @@
   <body>
     <h1>Server-Side Calculator</h1>
 
-    <form data-testid="calculator">
-      <input data-testid="numOne" placeholder="First Number" id="numberOne">
-      <button onClick="plusOperator(event)" id="addButton">+</button>
-      <button onClick="subOperator(event)" id="subButton">-</button>
-      <button onClick="multiplyOperator(event)" id="multiplyButton">*</button>
-      <button onClick="divideOperator(event)" id="divideButton">/</button>
-      <input data-testid="numTwo" placeholder="Second Number" id="numberTwo">
-      <button onClick="getCalculations(event)" >=</button>
-      <button onClick="clearInputs()">C</button>
+    <form data-testid="calculator" onsubmit="postHistory(event)" id="calcForm">
+      <input data-testid="numOne" placeholder="First Number" id="numOne">
+      <button onClick="setOperator(event, '+')" id="addButton">+</button>
+      <button onClick="setOperator(event, '-')" id="subButton">-</button>
+      <button onClick="setOperator(event, '*')" id="multiplyButton">*</button>
+      <button onClick="setOperator(event, '/')" id="divideButton">/</button>
+      <input data-testid="numTwo" placeholder="Second Number" id="numTwo">
+      <button type="submit" >=</button>
+      <button onClick="clearForm(event)">C</button>
     </form>
 
-    <section data-testid="recentResult">
+    <section data-testid="recentResult" id="recentResult">
       <!-- The most recent calculation result goes here. -->
     </section>
 
-    <section data-testid="resultHistory">
+    <section data-testid="resultHistory" id="resultHistory">
       <!-- The list of calculation results goes here. -->
     </section>
   </body>
